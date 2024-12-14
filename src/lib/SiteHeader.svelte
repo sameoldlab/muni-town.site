@@ -5,7 +5,7 @@
 
   const githubRepository = "muni-town/weird";
 
-  const menuLinks = [{ text: "App", url: "https://a.weird.one" }];
+  const menuLinks = [{ text: "App", url: "https://weird.one" }];
 </script>
 
 <div class="header">
