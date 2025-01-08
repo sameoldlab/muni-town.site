@@ -13,6 +13,11 @@
        without :global they get purged
     */
 
+    :global(h2) {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+
     :global(h3) {
       font-size: 3.5em;
       margin-bottom: 1em;

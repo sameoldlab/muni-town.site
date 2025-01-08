@@ -61,7 +61,7 @@
 
   .card {
     background: #b0a7e9;
-    padding: 6em 5em 20em 5em;
+    padding: 6em 5em 6em 5em;
     border: 2px solid black;
     border-radius: var(--border-radius);
     position: relative;
