@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(180deg, #250941 20%, #de7287 40%);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.italicize {
+    font-style: italic;
+  }
+
