@@ -1,25 +1,24 @@
-<script>
-  const heading = "Weird";
-  const subheading = `a way to <span class='italicize'>be</span> on the web`;
+<script lang="ts">
+  let subhead: HTMLParagraphElement;
+  import SiteHeader from "$lib/SiteHeader.svelte";
 </script>
 
-<div class="stars"></div>
 <section class="hero">
-  <div class="container">
-    <div class="content">
-      <div class="hero-copy">
-        <h1>{heading}</h1>
-        <p>{@html subheading}</p>
-      </div>
-      <div class="image">
-        <div class="full-size">
-          <img alt="keyboard and monitor" height="450" src="/hero.svg" />
-        </div>
-        <div class="small-size">
-          <img alt="keyboard" height="300" src="/keyboard.svg" />
-          <img alt="monitor" height="200" src="/Screen.svg" />
-        </div>
-      </div>
+  <div><SiteHeader /></div>
+  <div class="stars"></div>
+  <div class="image">
+    <div class="full-size">
+      <img alt="keyboard and monitor" height="450" src="/hero.svg" />
+    </div>
+    <div class="small-size">
+      <img alt="keyboard" height="300" src="/keyboard.svg" />
+      <img alt="monitor" height="200" src="/Screen.svg" />
+    </div>
+  </div>
+  <div class="content">
+    <div class="hero-copy">
+      <h1>Weird</h1>
+      <p bind:this={subhead}>a way to be on the web</p>
     </div>
   </div>
 </section>
@@ -28,110 +27,82 @@
   .stars {
     background: url("/stars.avif");
     /* extend a bit more than the viewport */
-    height: 175vh;
+    height: 100%;
     width: 100%;
     background-position: center;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
+  }
+
+  section {
+    display: grid;
+    justify-items: center;
+    min-height: 80svh;
+    max-width: 100%;
+
+    :global(& > div) {
+      width: 100%;
+      grid-column: 1/1;
+      grid-row: 1/1;
+    }
   }
 
   .content {
     display: grid;
-    place-items: center;
-    margin-top: 8em;
-    margin-bottom: 8em;
+    padding-top: 12em;
+    padding-bottom: 8em;
+    justify-items: center;
+  }
+  .hero-copy {
+    text-align: center;
 
-    .hero-copy {
-      display: grid;
-      place-items: center;
+    h1 {
+      font-family: "Rubik Mono One", monospace;
+      font-weight: 400;
+      font-size: min(16vw,13em);
+      color: #fff5bf;
+      text-shadow: -8px -8px #f55134;
 
-      h1 {
-        font-family: "Rubik Mono One", monospace;
-        font-weight: 400;
-        font-size: 13em;
-        color: #fff5bf;
-        text-shadow: -9px -6px #f55134;
+      /* prefix required for all browsers */
+      -webkit-text-stroke-width: 2.5px;
+      -webkit-text-stroke-color: black;
+    }
 
-        /* prefix required for all browsers */
-        -webkit-text-stroke-width: 2.5px;
-        -webkit-text-stroke-color: black;
+    p {
+      color: white;
+      font-weight: 700;
+      font-size: 3em;
 
-        @media (max-width: 1200px) {
-          font-size: 13em;
-        }
-
-        @media (max-width: 800px) {
-          font-size: 11em;
-        }
-
-        @media (max-width: 700px) {
-          font-size: 9em;
-        }
+      @media (max-width: 1200px) {
+        font-size: 2.5em;
       }
 
-      p {
-        color: white;
-        font-weight: 700;
-        font-size: 3em;
+      @media (max-width: 800px) {
+        font-size: 2em;
+      }
 
-        @media (max-width: 1200px) {
-          font-size: 2.5em;
-        }
-
-        @media (max-width: 800px) {
-          font-size: 2em;
-        }
-
-        @media (max-width: 700px) {
-          font-size: 1.5em;
-        }
+      @media (max-width: 700px) {
+        font-size: 1.5em;
       }
     }
   }
 
   .image {
-    img {
-      width: 1050px;
+    padding: 24rem 8rem;
+    max-width: 1200px;
 
-      @media (min-width: 1200px) {
-        /* push the image up */
-        margin-top: -5em;
-      }
-
-      @media (max-width: 1200px) {
-        width: 750px;
-      }
-    }
-  }
-
-  .small-size {
-    display: none;
-
-    @media (max-width: 800px) {
-      display: grid;
-      grid-auto-flow: column;
-      place-items: center;
-      gap: 2em;
-    }
-  }
-
-  @media (max-width: 800px) {
-    .full-size {
+    .small-size {
       display: none;
     }
 
-    img {
-      margin-top: 8em;
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .image img {
-      margin-bottom: 5em;
-      width: 90%;
+    @media (max-width: 800px) {
+      .small-size {
+        display: grid;
+        grid-auto-flow: column;
+        place-items: center;
+        gap: 2em;
+      }
+      .full-size {
+        display: none;
+      }
     }
   }
 </style>

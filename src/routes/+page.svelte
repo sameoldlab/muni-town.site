@@ -1,5 +1,4 @@
 <script>
-  import SiteHeader from "$lib/SiteHeader.svelte";
   import Hero from "./components/Hero.svelte";
   import Description from "./components/Description.svelte";
   import Features from "./components/Features.svelte";
@@ -9,8 +8,7 @@
   import './main.css';
 </script>
 
-<SiteHeader />
-<Hero />
+<Hero /> 
 <Description />
 <Features />
 <Marquee />

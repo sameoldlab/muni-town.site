@@ -8,7 +8,7 @@
   const menuLinks = [{ text: "App", url: "https://weird.one" }];
 </script>
 
-<div class="header">
+<header class="header">
   <div class="container">
     <div class="logo">
       <a href="/">
@@ -31,9 +31,12 @@
       </ul>
     </div>
   </div>
-</div>
+</header>
 
 <style>
+  header {
+    width: 100%;
+  }
   .container {
     display: grid;
     grid-template-columns: 1fr auto;
