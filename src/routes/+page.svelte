@@ -10,6 +10,7 @@
 
 <Hero /> 
 <Description />
+<Marquee />
 <Features />
 <Marquee />
 <FurtherReading />

@@ -1,3 +1,8 @@
+:root {
+    --yellow: #fff5bf;
+    --orange: #f55134;
+    --purple: #b0a7e9;
+}
 body {
     background: linear-gradient(180deg, #250941 20%, #de7287 40%);
     background-repeat: no-repeat;
