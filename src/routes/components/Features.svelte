@@ -11,12 +11,14 @@
 
 <section class="features">
   <Essentials />
-  <div class="container">
+ <div class="container">
+<!--
     <h2>Your starter-pack for <a href="https://den.dev/blog/be-a-property-owner-not-a-renter-on-the-internet/">property-ownership on the internet</a></h2>
     <div class="cards">
       <AvailableToday />
       <ComingSoon />
     </div>
+    -->
     <div class="milk-and-honey">
       <div class="text-block">
         <span class="prelude">{preludeText}</span>
@@ -42,7 +44,6 @@
   .features {
     padding-bottom: 2em;
     background: linear-gradient(180deg, #fff5bf, #e47689);
-    border-top: 2px solid black;
     display: grid;
   }
 
