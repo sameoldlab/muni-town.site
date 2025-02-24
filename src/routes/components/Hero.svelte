@@ -41,7 +41,7 @@
 </script>
 
 <section class="hero">
-  <div><SiteHeader /></div>
+  <div class="header"><SiteHeader /></div>
   <div class="stars"></div>
   <div class="image">
     <div class="full-size">
@@ -76,6 +76,28 @@
 </section>
 
 <style>
+  section {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    justify-items: center;
+    min-height: 80svh;
+    max-width: 100%;
+    background: linear-gradient(
+      180deg,
+      var(--p1),
+      var(--p2)
+    );
+    & > div {
+      width: 100%;
+      grid-column: 1/1;
+      grid-row: 2/-1;
+    }
+    .header {
+      grid-column: 1/1;
+      grid-row: 1/1;
+      z-index: 1;
+    }
+  }
   .stars {
     background: url("/stars.avif");
     /* extend a bit more than the viewport */
@@ -83,7 +105,8 @@
     width: 100%;
     background-position: center;
     position: relative;
-    z-index: -1;
+    grid-column: 1/1;
+    grid-row: 1/-1;
 
     &:before,
     &:after {
@@ -92,7 +115,6 @@
       background-repeat: no-repeat;
       position: absolute;
       bottom: 10vh;
-      z-index: -2;
       /* actual size of the image */
       height: 170px;
       width: 240px;
@@ -137,24 +159,12 @@
       width: 100%;
     }
   }
-  section {
-    display: grid;
-    justify-items: center;
-    min-height: 80svh;
-    max-width: 100%;
-
-    :global(& > div) {
-      width: 100%;
-      grid-column: 1/1;
-      grid-row: 1/1;
-    }
-  }
-
   .content {
     display: grid;
     padding-top: 12em;
     padding-bottom: 8em;
     justify-items: center;
+    z-index: 1;
   }
   @keyframes pulse {
     50% {

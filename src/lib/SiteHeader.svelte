@@ -39,7 +39,9 @@
   }
   .container {
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr auto;
+    padding: 2rem 4vw;
   }
 
   .logo {
