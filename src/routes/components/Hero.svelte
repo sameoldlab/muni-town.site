@@ -1,6 +1,43 @@
 <script lang="ts">
   let subhead: HTMLParagraphElement;
   import SiteHeader from "$lib/SiteHeader.svelte";
+  function typeWriter(
+    element: HTMLElement,
+    text: string,
+    speed = 500,
+    fn: () => void,
+  ) {
+    let i = 0;
+    let lastTime = 0;
+
+    function animate(current: number) {
+      const delta = current - lastTime;
+      if (delta >= Math.random() * speed + i * 7 && i < text.length) {
+        lastTime = current;
+        element.textContent += text.charAt(i);
+        i++;
+      }
+      if (i < text.length) {
+        requestAnimationFrame(animate);
+      }
+      if (i === text.length) {
+        fn();
+      }
+    }
+
+    animate(0);
+  }
+  $effect(() => {
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return 
+    let txt = subhead.innerText;
+    subhead.innerText = "";
+    subhead.dataset.typing = "true";
+    console.log(subhead.dataset.typing);
+    typeWriter(subhead, txt, undefined, () => {
+      subhead.dataset.typing = "false";
+      console.log(subhead.dataset.typing);
+    });
+  });
 </script>
 
 <section class="hero">
@@ -18,7 +55,9 @@
   <div class="content">
     <div class="hero-copy">
       <h1>Weird</h1>
-      <p bind:this={subhead}>a way to be on the web</p>
+      <p class="subhead" data-typing="true" bind:this={subhead}>
+        a way to be on the web!
+      </p>
     </div>
     <div class="cta">
       <form action="post">
@@ -116,6 +155,17 @@
     padding-top: 12em;
     padding-bottom: 8em;
     justify-items: center;
+  }
+  @keyframes pulse {
+    50% {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    [data-typing="true"]::after {
+      content: "|";
+      animation: pulse 1.3s step-start infinite;
+    }
   }
   .hero-copy {
     text-align: center;
