@@ -1,6 +1,7 @@
 <script lang="ts">
   let subhead: HTMLParagraphElement;
   import SiteHeader from "$lib/SiteHeader.svelte";
+    import Cta from "./hero/Cta.svelte";
   function typeWriter(
     element: HTMLElement,
     text: string,
@@ -59,19 +60,7 @@
         a way to be on the web!
       </p>
     </div>
-    <div class="cta">
-      <form action="post">
-        <div class="cta-plans">
-          <div><p>Extra weird $25 <span>50% off</span></p></div>
-          <div><p>Regular Weird <span>free</span></p></div>
-        </div>
-        <div class="cta-register">
-          <input type="text" placeholder="a [name].weird.one" />
-          <button>Register</button>
-        </div>
-      </form>
-      <div><a href="a">custom domains</a><a href="b">Why the numbers?</a></div>
-    </div>
+    <Cta/>
   </div>
 </section>
 
@@ -121,44 +110,6 @@
     }
   }
 
-  .cta-plans {
-    display: flex;
-    background: blue;
-    padding: 0.25rem;
-
-    div.selected {
-      background: red;
-    }
-    p {
-      padding: 0;
-      min-width: max-content;
-    }
-    span {
-      border: 1px solid black;
-      border-radius: 400px;
-      padding: 0.5rem 2.5rem;
-    }
-  }
-  .cta-register {
-    display: flex;
-    gap: 0;
-    border: 1px solid black;
-    input,
-    button {
-      padding: 1.75rem 3.5rem;
-      border: 0;
-      border-radius: 0;
-    }
-  }
-  .cta-plans {
-    border: 1px solid black;
-    background: var(--yellow);
-    align-items: center;
-    * {
-      padding: 1.75rem 3.5rem;
-      width: 100%;
-    }
-  }
   .content {
     display: grid;
     padding-top: 12em;
