@@ -90,13 +90,43 @@
   .cards {
     display: flex;
     gap: 2rem;
+    max-width: 100%;
     justify-content: space-between;
     margin-block-start: calc(-1 * var(--offset));
     padding-block: 3rem;
     div {
+      position: relative;
       height: calc(1.4 * var(--offset));
-      min-width: 100px;
-      border: 1px solid black;
-    }
+      background: peachpuff;
+      width: 100%;
+      border: 2px solid white;
+      border-radius: 1rem;
+      transition-property: transform, rotate;
+      transition-duration: 600ms;
+      /* cooked overshoot */
+      transition-timing-function: cubic-bezier(0, 0.74, 0.2, 1.6);
+
+      &:nth-child(1) {
+        rotate: -7.19deg;
+        transform: translate(10px, 30px);
+      }
+      &:nth-child(2) {
+        rotate: 7.89deg;
+        transform: translate(0px, -8px);
+        z-index: 1;
+      }
+      &:nth-child(3) {
+        rotate: -6.37deg;
+        transform: translate(0px, 12px);
+      }
+      &:nth-child(4) {
+        rotate: 8.93deg;
+        transform: translate(0px, -10px);
+        z-index: 1;
+      }}
+      &:hover div {
+        transform: translate(0);
+        rotate: 0deg;
+      }
   }
 </style>
