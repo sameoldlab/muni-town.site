@@ -58,7 +58,7 @@
     margin-inline: auto;
   }
   h2 {
-    font-size: 3em;
+    font-size: clamp(3em, 4vw, 4em);
     padding-block-end: 1rem;
   }
 
