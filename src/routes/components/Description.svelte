@@ -25,10 +25,10 @@
     </div>
     <div class="new-thing">
       <p>
-        Weird is a brand new thing, but: Think of it as if WordPress and Notion
+        Weird is a brand new thing, but: Think of it as if <a href="https://wordpress.org"> WordPress</a> and <a href="https://notion.com">Notion</a>
         had a Linktree-shaped baby. That is to say, a WordPress-type website
         engine with the editing experience of Notion and the simplicity of
-        Linktree.
+        <a href="https://linktr.ee">Linktree</a>.
       </p>
       <div class="border"></div>
     </div>
@@ -39,6 +39,7 @@
   :root {
     --offset: 200px;
   }
+  a {color: inherit;}
   section {
     text-align: center;
   }
