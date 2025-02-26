@@ -20,7 +20,7 @@
   <div class="second container">
     <div class="cards">
       {#each profiles as profile}
-        <div>{profile.name}</div>
+        <div class="card">{profile.name}</div>
       {/each}
     </div>
     <div class="new-thing">
@@ -95,6 +95,7 @@
     justify-content: space-between;
     margin-block-start: calc(-1 * var(--offset));
     padding-block: 3rem;
+    position: relative;
     div {
       position: relative;
       height: calc(1.4 * var(--offset));
@@ -109,7 +110,7 @@
 
       &:nth-child(1) {
         rotate: -7.19deg;
-        transform: translate(10px, 30px);
+        transform: translate(10px, 20px);
       }
       &:nth-child(2) {
         rotate: 7.89deg;
@@ -118,11 +119,11 @@
       }
       &:nth-child(3) {
         rotate: -6.37deg;
-        transform: translate(0px, 12px);
+        transform: translate(-10px, 12px);
       }
       &:nth-child(4) {
         rotate: 8.93deg;
-        transform: translate(0px, -10px);
+        transform: translate(-30px, -10px);
         z-index: 1;
       }}
       &:hover div {
