@@ -74,7 +74,7 @@
     background: linear-gradient(
       180deg,
       var(--p1),
-      var(--p2)
+      var(--p2) 80%
     );
     & > div {
       width: 100%;
@@ -112,7 +112,7 @@
 
   .content {
     display: grid;
-    padding-top: 12em;
+    padding-top: 2em;
     padding-bottom: 8em;
     justify-items: center;
     z-index: 1;
@@ -134,7 +134,7 @@
     h1 {
       font-family: "Rubik Mono One", monospace;
       font-weight: 400;
-      font-size: min(16vw, 13em);
+      font-size: min(16vw, 10em);
       color: var(--yellow);
       text-shadow: -8px -8px var(--orange);
 
@@ -163,7 +163,7 @@
   }
 
   .image {
-    padding: 24rem 8rem;
+    padding: 9rem 8rem;
     max-width: 1200px;
 
     .small-size {
