@@ -1,16 +1,14 @@
 <script lang="ts">
-  // import { enhance } from "$app/forms";
-  let planToggle = $state("regular");
+  let plan = $state("regular");
   let username = $state("");
 </script>
 
 <div class="cta">
-  <!--
-    onsubmit={(e) => {
+  <form onsubmit={(e: SubmitEvent) => {
       e.preventDefault();
+      // reroute to weird.one/route/to/register?username=${username}&plan={plan}
     }}
--->
-  <form>
+  >
     <fieldset class="plans_toggle">
       <legend>Select a Plan</legend>
       <div class="plans_toggle-content">
@@ -19,7 +17,7 @@
           name="plan"
           value="extra"
           id="plan-extra"
-          bind:group={planToggle}
+          bind:group={plan}
         />
         <label for="plan-extra">Extra weird $25 <span>50% off</span></label>
 
@@ -28,7 +26,7 @@
           name="plan"
           value="regular"
           id="plan-regular"
-          bind:group={planToggle}
+          bind:group={plan}
         />
         <label for="plan-regular">Regular Weird <span>free</span></label>
 
