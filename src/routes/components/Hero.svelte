@@ -29,30 +29,20 @@
     animate(0);
   }
   $effect(() => {
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let txt = subhead.innerText;
     subhead.innerText = "";
     subhead.dataset.typing = "true";
-    console.log(subhead.dataset.typing);
     typeWriter(subhead, txt, undefined, () => {
       subhead.dataset.typing = "false";
-      console.log(subhead.dataset.typing);
     });
   });
 </script>
 
+<div class="stars"><img src="/stars.svg" alt="" /></div>
 <section class="hero">
   <div class="header"><SiteHeader /></div>
-  <div class="stars"></div>
-  <div class="image">
-    <div class="full-size">
-      <img alt="keyboard and monitor" height="450" src="/hero.svg" />
-    </div>
-    <div class="small-size">
-      <img alt="keyboard" height="300" src="/keyboard.svg" />
-      <img alt="monitor" height="200" src="/Screen.svg" />
-    </div>
-  </div>
+  <div class="clouds"><img src="/cloud.svg" alt="" /></div>
   <div class="content">
     <div class="hero-copy">
       <h1>Weird</h1>
@@ -60,22 +50,26 @@
         a way to be on the web!
       </p>
     </div>
-    <Cta/>
+    <div class="image">
+      <div class="full-size">
+        <img alt="keyboard and monitor" height="450" src="/hero.svg" />
+      </div>
+      <div class="small-size">
+        <img alt="keyboard" height="300" src="/keyboard.svg" />
+        <img alt="monitor" height="200" src="/Screen.svg" />
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
   section {
     display: grid;
+    position: relative;
     grid-template-rows: min-content 1fr;
     justify-items: center;
-    min-height: 80svh;
     max-width: 100%;
-    background: linear-gradient(
-      180deg,
-      var(--p1),
-      var(--p2) 80%
-    );
+    background: linear-gradient(180deg, var(--p1), var(--p2) 80%);
     & > div {
       width: 100%;
       grid-column: 1/1;
@@ -88,26 +82,25 @@
     }
   }
   .stars {
-    background: url("/stars.avif");
-    /* extend a bit more than the viewport */
-    height: 100%;
+    opacity: .75;
+    position: absolute;
+    z-index: 1;
     width: 100%;
-    background-position: center;
-    position: relative;
+    pointer-events: none;
+    img {
+      object-fit: cover;
+      height: 80vh;
+      width: 100%;
+    }
     grid-column: 1/1;
     grid-row: 1/-1;
-
-    &:before,
-    &:after {
-      content: "";
-      background: url("/cloud.svg");
-      background-repeat: no-repeat;
-      position: absolute;
-      bottom: 10vh;
-      /* actual size of the image */
-      height: 170px;
-      width: 240px;
-    }
+  }
+  .clouds {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    /* actual size of the image */
+    width: 30vw;
   }
 
   .content {
@@ -163,11 +156,17 @@
   }
 
   .image {
-    padding: 9rem 8rem;
+    padding-inline: 9rem;
+    width: 100%;
+    max-height: 300px;
     max-width: 1200px;
 
     .small-size {
       display: none;
+    }
+    .full-size {
+      margin-block-start: -50px;
+      margin-block-end: -100px;
     }
 
     @media (max-width: 800px) {
