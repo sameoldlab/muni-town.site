@@ -1,7 +1,7 @@
 <script lang="ts">
   let subhead: HTMLParagraphElement;
   import SiteHeader from "$lib/SiteHeader.svelte";
-    import Cta from "./hero/Cta.svelte";
+  // import Cta from "./hero/Cta.svelte";
   function typeWriter(
     element: HTMLElement,
     text: string,
@@ -59,6 +59,7 @@
         <img alt="monitor" height="200" src="/Screen.svg" />
       </div>
     </div>
+    <!--Cta /-->
   </div>
 </section>
 
