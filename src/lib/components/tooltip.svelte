@@ -2,15 +2,20 @@
   let { content, children } = $props();
   const id = Math.random();
   let btn: HTMLButtonElement = $state(null)
-  const bcr = $derived(btn?.getBoundingClientRect())
 
   const position = (e: ToggleEvent) => {
     if (e.newState === "open") {
-      console.log(bcr)
+      const bcr = btn?.getBoundingClientRect()
       Object.assign(e.target.style, {
         left: (bcr.left +bcr.width / 2 )+ "px",
-        top: bcr.top + "px",
+        top: (bcr.top + window.scrollY) + "px",
+        opacity: 1
       });
+    } else {
+      Object.assign(e.target.style, {
+        opacity: 0
+      });
+      
     }
   };
 </script>
@@ -34,7 +39,9 @@
     text-decoration: underline;
   }
   div {
-    margin: o;
+    opacity: 0;
+    margin: 0;
+    transition: opacity 160ms ease-in;;
     position: absolute;
     padding: 1rem;
     padding-top: .75rem;
