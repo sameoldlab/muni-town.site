@@ -1,93 +1,155 @@
-<section class="description">
-  <div class="container">
-    <div class="content">
-      <div class="card">
-        <p>
-          <span>The time has come to</span>
-          <a href="https://webdirections.org/blog/reweirding-the-web/">
-            reweird
-          </a>
-          <span>
-            the web! We're doing our little part by making a prosocial network
-            based on the cornerstone of the internet:
-          </span><a
-            href="https://blog.jim-nielsen.com/2022/other-peoples-websites/"
-            >Personal websites</a
-          >.
-        </p>
-      </div>
+<script>
+  import p1 from "./profiles/profile-1.webp";
+  import p2 from "./profiles/profile-2.webp";
+  import p3 from "./profiles/profile-3.webp";
+  import p4 from "./profiles/profile-4.webp";
+  let { profiles = [p1, p2, p3, p4] } = $props();
+</script>
+
+<section>
+  <div class="first container">
+    <h2>Cultivate your personal space on the interwebs</h2>
+    <p class="subhead">
+      from scribble-saplings to digital garden, in communion with fellow
+      weirdos.
+    </p>
+  </div>
+  <div class="second container">
+    <div class="cards">
+      {#each profiles as src}
+        <div class="card">
+          <img {src} alt="" />
+        </div>
+      {/each}
+    </div>
+    <div class="new-thing">
+      <p>
+        Weird is a brand new thing, but: Think of it as if <a
+          href="https://wordpress.org"
+        >
+          WordPress</a
+        >
+        and <a href="https://notion.com">Notion</a>
+        had a Linktree-shaped baby. That is to say, a WordPress-type website engine
+        with the editing experience of Notion and the simplicity of
+        <a href="https://linktr.ee">Linktree</a>.
+      </p>
+      <div class="border"></div>
     </div>
   </div>
 </section>
 
 <style>
-  .description {
-    position: relative;
+  :root {
+    --offset: 200px;
+  }
+  a {
+    color: inherit;
+  }
+  section {
+    text-align: center;
+  }
+  .first {
+    background: linear-gradient(180deg, var(--p2), var(--p3), var(--p4));
+    padding-block-end: var(--offset);
+  }
+  h2,
+  .subhead {
+    color: white;
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+  h2 {
+    font-size: clamp(3em, 4vw, 4em);
+    padding-block-end: 1rem;
+  }
 
-    &:before,
-    &:after {
-      content: "";
-      background: url("/cloud.svg");
-      background-repeat: no-repeat;
-      position: absolute;
-      z-index: -2;
-      /* actual size of the image */
-      height: 170px;
-      width: 240px;
+  .second {
+    background: linear-gradient(
+      180deg,
+      var(--yellow),
+      oklch(69.71% 0.1361 10.71)
+    );
+  }
+
+  .new-thing {
+    --main-width: 64rem;
+    max-width: var(--main-width);
+    margin-inline: auto;
+    padding-block-end: 2rem;
+    p {
+      padding-block: 2rem;
     }
+    .border {
+      border-top: 1px solid black;
+      height: 1px;
+      max-width: calc(var(--main-width) - 10rem);
+      margin-inline: auto;
+      width: 100%;
+    }
+  }
 
-    &:before {
-      left: 0;
-      /* pull the left cloud up */
-      top: -30%;
+  .cards {
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: calc(-1 * var(--offset));
+    padding-block: 3rem;
+    position: relative;
+    div {
+      overflow: hidden;
+      position: relative;
+      height: auto;
+      max-width: 300px;
+      aspect-ratio: 5/7;
+      box-shadow:
+        0px 10px 16px -3px oklch(0.6 0.01 45 / .1),
+        0px 0px 30px 0px   oklch(0.6 0.01 45 / .1),
+        0px 8px 7px 0px    oklch(0.6 0.01 45 / .1);
+      &::before {
+        content: "";
+        position: absolute;
+      }
+      border: 2px solid white;
+      border-radius: 1rem;
+      transition-property: transform, rotate;
+      transition-duration: 600ms;
+      /* cooked overshoot */
+      transition-timing-function: cubic-bezier(0, 0.74, 0.2, 1.6);
+      img {
+        position: relative;
+        display: block;
+        object-fit: cover;
+      }
 
-      @media (max-width: 1200px) {
-        top: 0;
+      &:nth-child(1) {
+        background: var(--purple);
+        rotate: -7.19deg;
+        transform: translate(10px, 20px);
+      }
+      &:nth-child(2) {
+        background: white;
+        rotate: 7.89deg;
+        transform: translate(0px, -8px);
+        z-index: 1;
+      }
+      &:nth-child(3) {
+        background: var(--yellow);
+        rotate: -6.37deg;
+        transform: translate(10px, -12px);
+      }
+      &:nth-child(4) {
+        background: black;
+        rotate: 8.93deg;
+        transform: translate(-30px, -10px);
+        z-index: 1;
       }
     }
-
-    &:after {
-      right: 0;
-      /* push the right cloud down */
-      top: 10%;
+    &:hover div {
+      transform: translate(0);
+      rotate: 0deg;
     }
-  }
-
-  .content {
-    width: 900px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .card {
-    background: #b0a7e9;
-    padding: 6em 5em 6em 5em;
-    border: 2px solid black;
-    border-radius: var(--border-radius);
-    position: relative;
-
-    &:before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: #b0a7e9;
-      z-index: -1;
-      right: -2.25em;
-      top: -2.25em;
-      border: 2px solid black;
-      border-radius: var(--border-radius);
-    }
-  }
-
-  p {
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2.25em;
-  }
-
-  a {
-    color: black;
-    font-weight: 700;
   }
 </style>

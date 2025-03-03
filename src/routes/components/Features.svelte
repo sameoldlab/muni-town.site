@@ -1,5 +1,6 @@
 <script>
   import WebPasspostsCard from "./features/web-passports.svelte";
+  import Essentials from './features/essentials.svelte'
   import MagicWebsiteCreatorCard from "./features/magic-website-creator.svelte";
   import AvailableToday from "./features/available-today.svelte";
   import ComingSoon from "./features/coming-soon.svelte";
@@ -9,12 +10,15 @@
 </script>
 
 <section class="features">
-  <div class="container">
+  <Essentials />
+ <div class="container">
+<!--
     <h2>Your starter-pack for <a href="https://den.dev/blog/be-a-property-owner-not-a-renter-on-the-internet/">property-ownership on the internet</a></h2>
     <div class="cards">
       <AvailableToday />
       <ComingSoon />
     </div>
+    -->
     <div class="milk-and-honey">
       <div class="text-block">
         <span class="prelude">{preludeText}</span>
@@ -40,7 +44,6 @@
   .features {
     padding-bottom: 2em;
     background: linear-gradient(180deg, #fff5bf, #e47689);
-    border-top: 2px solid black;
     display: grid;
   }
 
