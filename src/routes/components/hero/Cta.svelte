@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Tooltip from "$lib/components/tooltip.svelte";
   let plan = $state("regular");
   let username = $state("");
 </script>
@@ -62,7 +63,24 @@
   </form>
 
   <div class="explainers">
-    <a href="a">custom domains</a><a href="b">Why the numbers?</a>
+    <Tooltip>
+      custom domains
+      {#snippet content()}
+        Got your own domain already? We will help you set that up after you’ve
+        started your Extra subscription.
+      {/snippet}
+    </Tooltip>
+    <Tooltip>
+      Why the numbers?
+      {#snippet content()}
+        All new signups get four random numbers added to their account name,
+        like yourname7788.weird.one We do this because Weird aspires to be a
+        high-trust network that strictly minimizes inauthentic activities. The
+        numerical suffix is one of several measures against anti-social behavior
+        such as domain-squatting and bot registrations. <a href="https://blog.muni.town/custom-domains-for-weird/">Slightly longer answer
+        here.</a>
+      {/snippet}
+    </Tooltip>
   </div>
 </div>
 
