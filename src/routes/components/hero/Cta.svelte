@@ -71,7 +71,7 @@
           started your Extra subscription.
         {/snippet}
       </Tooltip>
-    {:else if plan === 'regular'}
+    {:else if plan === "regular"}
       <Tooltip>
         Why the numbers?
         {#snippet content()}
