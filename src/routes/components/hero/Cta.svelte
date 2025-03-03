@@ -4,7 +4,8 @@
 </script>
 
 <div class="cta">
-  <form onsubmit={(e: SubmitEvent) => {
+  <form
+    onsubmit={(e: SubmitEvent) => {
       e.preventDefault();
       // reroute to weird.one/route/to/register?username=${username}&plan={plan}
     }}
@@ -29,16 +30,6 @@
           bind:group={plan}
         />
         <label for="plan-regular">Regular Weird <span>free</span></label>
-
-        <!--
-      <input type="radio" name="plan" bind:value={isExtra} id="plan-selection" /> 
-      <button onclick={togglePlan} role="option" aria-selected={isExtra}
-        >Extra weird $25 <span>50% off</span></button
-      >
-      <button onclick={togglePlan} role="option" aria-selected={!isExtra}
-        >Regular Weird <span>free</span></button
-      >
-      -->
       </div>
     </fieldset>
 
