@@ -8,11 +8,7 @@
 
 <section>
   <div class="first container">
-    <h2>Cultivate your personal space on the interwebs</h2>
-    <p class="subhead">
-      from scribble-saplings to digital garden, in communion with fellow
-      weirdos.
-    </p>
+    <h2>cultivate knowledge</h2>
   </div>
   <div class="second container">
     <div class="cards">
