@@ -20,15 +20,10 @@
     </div>
     <div class="new-thing">
       <p>
-        Weird is a brand new thing, but: Think of it as if <a
-          href="https://wordpress.org"
-        >
-          WordPress</a
-        >
-        and <a href="https://notion.com">Notion</a>
-        had a Linktree-shaped baby. That is to say, a WordPress-type website engine
-        with the editing experience of Notion and the simplicity of
-        <a href="https://linktr.ee">Linktree</a>.
+        Think of Roomy as a communications playground – there's only one rule in the freeform game we're all playing together: Communicate, to the best of your ability. Roomy's job as a digital community platform is to make effective communication (mindful communing) effortless, that way everyone wins.
+
+        It might look like regular old group chat with a hint of even older internet fora mixed in, but that's just the default entry-point for group coordination. Roomy expands far beyond these familiar archetypes. How? That's better experienced than explained; go make some space to find out.
+
       </p>
       <div class="border"></div>
     </div>
