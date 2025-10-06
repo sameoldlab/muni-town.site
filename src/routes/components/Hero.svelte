@@ -45,9 +45,9 @@
   <div class="clouds"><img src="/cloud.svg" alt="" /></div>
   <div class="content">
     <div class="hero-copy">
-      <h1>Weird</h1>
+      <h1>Roomy</h1>
       <p class="subhead" data-typing="true" bind:this={subhead}>
-        a way to be on the web!
+        make space
       </p>
     </div>
     <div class="image">
