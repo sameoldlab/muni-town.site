@@ -20,10 +20,7 @@
     </div>
     <div class="new-thing">
       <p>
-        Think of Roomy as a communications playground – there's only one rule in the freeform game we're all playing together: Communicate, to the best of your ability. Roomy's job as a digital community platform is to make effective communication (mindful communing) effortless, that way everyone wins.
-
-        It might look like regular old group chat with a hint of even older internet fora mixed in, but that's just the default entry-point for group coordination. Roomy expands far beyond these familiar archetypes. How? That's better experienced than explained; go make some space to find out.
-
+        Roomy is a freeform communications playground for messages both big and small, fast and slow; in these roomy spaces we move together at the speed of understanding.
       </p>
       <div class="border"></div>
     </div>
