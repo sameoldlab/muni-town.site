@@ -8,11 +8,7 @@
 
 <section>
   <div class="first container">
-    <h2>Cultivate your personal space on the interwebs</h2>
-    <p class="subhead">
-      from scribble-saplings to digital garden, in communion with fellow
-      weirdos.
-    </p>
+    <h2>cultivate knowledge</h2>
   </div>
   <div class="second container">
     <div class="cards">
@@ -24,15 +20,7 @@
     </div>
     <div class="new-thing">
       <p>
-        Weird is a brand new thing, but: Think of it as if <a
-          href="https://wordpress.org"
-        >
-          WordPress</a
-        >
-        and <a href="https://notion.com">Notion</a>
-        had a Linktree-shaped baby. That is to say, a WordPress-type website engine
-        with the editing experience of Notion and the simplicity of
-        <a href="https://linktr.ee">Linktree</a>.
+        Roomy is a freeform communications playground for messages both big and small, fast and slow; in these roomy spaces we move together at the speed of understanding.
       </p>
       <div class="border"></div>
     </div>
