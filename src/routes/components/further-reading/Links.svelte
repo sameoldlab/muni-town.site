@@ -1,48 +1,52 @@
 <script>
   const sectionHeading = "Further Reading";
   const sectionSubheading = "for the nerds";
-
-  const productLinksHeading = "Product";
-  const productLinks = [
+  const sections = [
     {
-      text: "Weird Web Pages",
-      url: "https://blog.erlend.sh/weird-web-pages",
+      heading: "Product",
+      links: [
+        {
+          text: "Weird Web Pages",
+          url: "https://blog.erlend.sh/weird-web-pages",
+        },
+        {
+          text: "Weird Netizens (Web Passports)",
+          url: "https://blog.erlend.sh/weird-netizens",
+        },
+        {
+          text: "Digital Homeownership",
+          url: "https://blog.muni.town/digital-homeownership/",
+        },
+        {
+          text: "Weird 2025 (Roadmap)",
+          url: "https://blog.muni.town/weird-2025/",
+        },
+      ],
     },
     {
-      text: "Weird Netizens (Web Passports)",
-      url: "https://blog.erlend.sh/weird-netizens",
-    },
-    {
-      text: "Digital Homeownership",
-      url: "https://blog.muni.town/digital-homeownership/",
-    },
-    {
-      text: "Weird 2025 (Roadmap)",
-      url: "https://blog.muni.town/weird-2025/",
-    },
-  ];
-
-  const protocolLinksHeading = "Protocol";
-  const protocolLinks = [
-    {
-      text: "The Leaf Protocol",
-      url: "https://zicklag.katharos.group/blog/introducing-leaf-protocol/",
-    },
-    {
-      text: "How to Federate?",
-      url: "https://zicklag.katharos.group/blog/how-to-federate/",
-    },
-    {
-      text: "A Web of Data",
-      url: "https://zicklag.katharos.group/blog/a-web-of-data/",
-    },
-    {
-      text: "Leaf, ATProto and ActivityPub",
-      url: "https://blog.muni.town/leaf-atproto-activitypub/",
-    },
-    {
-      text: "Capabilities & Identity with Leaf",
-      url: "https://blog.muni.town/capabilities-and-identity-with-leaf/",
+      heading: "Protocol",
+      links: [
+        {
+          text: "The Leaf Protocol",
+          url: "https://zicklag.katharos.group/blog/introducing-leaf-protocol/",
+        },
+        {
+          text: "How to Federate?",
+          url: "https://zicklag.katharos.group/blog/how-to-federate/",
+        },
+        {
+          text: "A Web of Data",
+          url: "https://zicklag.katharos.group/blog/a-web-of-data/",
+        },
+        {
+          text: "Leaf, ATProto and ActivityPub",
+          url: "https://blog.muni.town/leaf-atproto-activitypub/",
+        },
+        {
+          text: "Capabilities & Identity with Leaf",
+          url: "https://blog.muni.town/capabilities-and-identity-with-leaf/",
+        },
+      ],
     },
   ];
 </script>
@@ -60,40 +64,24 @@
   <div class="content">
     <h3>{sectionHeading}</h3>
     <span class="section-subheading">{sectionSubheading}</span>
-
-    <div class="link-list">
-      <span class="list-heading">{productLinksHeading}</span>
-      <ul>
-        {#each productLinks as { text, url }}
-          <li>
-            <a href={url}>
-              <span class="link-text">{text}</span>
-              <span
-                class="link-arrow
+    {#each sections as { heading, links }}
+      <div class="link-list">
+        <span class="list-heading">{heading}</span>
+        <ul>
+          {#each links as { text, url }}
+            <li>
+              <a href={url}>
+                <span class="link-text">{text}</span>
+                <span
+                  class="link-arrow
               ">➜</span
-              >
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
-
-    <div class="link-list">
-      <span class="list-heading">{protocolLinksHeading}</span>
-      <ul>
-        {#each protocolLinks as { text, url }}
-          <li>
-            <a href={url}>
-              <span class="link-text">{text}</span>
-              <span
-                class="link-arrow
-              ">➜</span
-              >
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+                >
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    {/each}
   </div>
 </div>
 
