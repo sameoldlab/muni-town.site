@@ -1,6 +1,6 @@
 <script>
   import WebPasspostsCard from "./features/web-passports.svelte";
-  import Essentials from './features/essentials.svelte'
+  import Features from './features/features.svelte'
   import MagicWebsiteCreatorCard from "./features/magic-website-creator.svelte";
   import AvailableToday from "./features/available-today.svelte";
   import ComingSoon from "./features/coming-soon.svelte";
@@ -10,7 +10,7 @@
 </script>
 
 <section class="features">
-  <Essentials />
+  <Features />
  <div class="container">
 <!--
     <h2>Your starter-pack for <a href="https://den.dev/blog/be-a-property-owner-not-a-renter-on-the-internet/">property-ownership on the internet</a></h2>
